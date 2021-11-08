@@ -1,0 +1,79 @@
+@import "variables";
+
+.contact {
+  position: relative;
+  &::before {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    display: block;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: $red;
+    height: 100%;
+    width: 100vw;
+  }
+  color: white;
+  text-align: center;
+  padding: 3rem;
+  display: grid;
+  grid-gap: 1.5rem;
+  align-items: center;
+  h3 {
+    font-size: 2rem;
+    letter-spacing: 0.07em;
+  }
+  .devider {
+    height: 2px;
+    width: 6rem;
+    background: white;
+    position: relative;
+    margin: auto;
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      height: 0.6rem;
+      width: 0.6rem;
+      border-radius: 50%;
+      background: white;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  p {
+    max-width: 37rem;
+    margin: auto;
+  }
+  .contactInfo {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem auto;
+    justify-content: space-between;
+    font-weight: 500;
+    width: 100%;
+    max-width: 45rem;
+  }
+  .buttonAnim {
+    margin: auto;
+    width: max-content;
+    border-color: white;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    .contactInfo {
+      flex-direction: column;
+      grid-gap: 1.5rem;
+    }
+  }
+}
+
+@media (max-width: 570px) {
+  .contact {
+    padding: 3rem 2rem;
+  }
+}

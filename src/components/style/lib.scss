@@ -1,0 +1,88 @@
+@import "variables";
+
+button.buttonAnim {
+  padding: 1.1rem 2.75rem;
+  white-space: nowrap;
+  border-radius: 4rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid $red;
+  background: $red;
+  color: white;
+  transition: background 0.3s cubic-bezier(0.75, 0, 0.125, 1);
+  .anim {
+    letter-spacing: 0.2em;
+    span {
+      opacity: 0;
+      transition: opacity 0.2s ease-in-out;
+    }
+  }
+  .static {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    transition: transform 0.3s cubic-bezier(0.75, 0, 0.125, 1);
+  }
+  &.hover {
+    .static {
+      transform: translateY(200%) translateX(-50%);
+    }
+    .anim {
+      span {
+        opacity: 1;
+        color: $red;
+      }
+    }
+    background: white;
+  }
+  &:not(.hover) {
+    .anim {
+      span {
+        transition-delay: 0ms !important;
+      }
+    }
+  }
+  &.clean {
+    background: white;
+    color: $red;
+    .anim {
+      span {
+        color: white;
+      }
+    }
+    &.hover {
+      background: $red;
+    }
+    &.cyan {
+      border-color: $cyan;
+      .static {
+        color: $cyan;
+      }
+      &.hover {
+        background: $cyan;
+      }
+    }
+  }
+  &.cyan:not(.clean) {
+    background: $cyan;
+    border-color: $cyan;
+    .anim {
+      span {
+        color: $cyan;
+      }
+    }
+    &.hover {
+      background: white;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  button.buttonAnim {
+    padding: 0.7rem 2.25rem;
+  }
+}

@@ -1,0 +1,93 @@
+@import "./components/style/variables.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+img {
+  vertical-align: middle;
+}
+
+p {
+  letter-spacing: 0.03em;
+  line-height: 1.5em;
+}
+
+.sectionDevider {
+  height: 2px;
+  width: 6rem !important;
+  background: $red;
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 0.6rem;
+    width: 0.6rem;
+    border-radius: 50%;
+    background: $red;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+#portal {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  .modalBackdrop {
+    pointer-events: all;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .modal {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    pointer-events: all;
+    z-index: 10;
+    background: white;
+    max-height: calc(100vh - 2rem);
+    & ~ .modalBackdrop {
+      z-index: 10;
+      & ~ .modal {
+        z-index: 10;
+      }
+    }
+  }
+  .toast {
+    border: 1px dashed red;
+    pointer-events: all;
+    margin: auto;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+    place-items: center;
+    background: white;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.2);
+  }
+}

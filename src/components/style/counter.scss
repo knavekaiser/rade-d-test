@@ -1,0 +1,141 @@
+.counter {
+  position: relative;
+  padding: 5rem 1rem;
+  &::before {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    display: block;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #f9f9ff;
+    height: 100%;
+    width: 100vw;
+  }
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 1.5rem;
+  .head {
+    grid-column: 1/-1;
+    display: grid;
+    grid-gap: 2rem;
+    h2 {
+      font-size: 3.3rem;
+    }
+    p {
+      max-width: 30rem;
+    }
+    margin-bottom: 2rem;
+  }
+  .item {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-transform: uppercase;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    padding: 5rem 2rem;
+    padding-bottom: 3rem;
+    grid-gap: 2rem;
+    transition: transform 0.3s ease-in-out;
+    .wave {
+      font-size: 2.25rem;
+      color: #777;
+      position: relative;
+      height: min-content;
+      &::after,
+      &::before {
+        animation: wave 3s linear infinite;
+        position: absolute;
+        content: "";
+        height: 5.5rem;
+        width: 5.5rem;
+        top: 50%;
+        left: 50%;
+        border-radius: 130px 120px 160px 130px;
+      }
+      &::before {
+        transform: translate(-50%, -50%);
+        background: rgba(144, 172, 209, 0.2);
+      }
+      &::after {
+        transform: translate(-47%, -50%);
+        border: 2px solid #90acd1;
+      }
+      svg {
+        display: grid;
+        margin: auto;
+      }
+      margin-bottom: 2rem;
+    }
+    span {
+      font-size: 2.2rem;
+      font-weight: 600;
+    }
+    h5 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+    P {
+      text-transform: none;
+      font-size: 0.85rem;
+      color: #777;
+    }
+  }
+  &.services {
+    .item {
+      &:hover {
+        transform: translateY(-12px);
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .counter {
+    .item {
+      padding: 3.5rem 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+  }
+}
+@media (max-width: 990px) {
+  .counter {
+    .head {
+      grid-gap: 1.5rem;
+      h2 {
+        font-size: 2.25rem;
+      }
+    }
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 768px) {
+  .counter {
+    grid-template-columns: 1fr;
+    .item {
+      padding: 3rem;
+    }
+  }
+}
+
+@keyframes wave {
+  0% {
+    border-radius: 120px 135px 110px 90px;
+  }
+  25% {
+    border-radius: 130px 140px 100px 110px;
+  }
+  50% {
+    border-radius: 110px 97px 150px 100px;
+  }
+  75% {
+    border-radius: 80px 107px 120px 90px;
+  }
+  100% {
+    border-radius: 120px 135px 110px 90px;
+  }
+}

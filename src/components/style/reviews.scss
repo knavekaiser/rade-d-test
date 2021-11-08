@@ -1,0 +1,57 @@
+@import "variables";
+
+.reviews {
+  padding: 6rem 3rem;
+  text-align: center;
+  .item {
+    * {
+      pointer-events: none !important;
+    }
+    margin: auto;
+    max-width: 35rem;
+    display: grid;
+    grid-gap: 1rem;
+    h4 {
+      font-size: 3.5rem;
+      font-weight: 400;
+      color: rgba(0, 0, 0, 0.1);
+    }
+    .stars {
+      color: #ffc000;
+    }
+    p {
+      font-size: 0.9rem;
+      color: rgba(0, 0, 0, 0.7);
+    }
+  }
+  .wrapper {
+    padding-bottom: 3rem;
+  }
+  .dot {
+    margin: auto;
+    width: min-content;
+    bottom: 0rem;
+    background: rgba(0, 0, 0, 0.1);
+    li {
+      display: grid;
+      button {
+        border-radius: 0;
+        border: none;
+        margin: 0;
+        height: 4px;
+        width: 3rem;
+      }
+      &.react-multi-carousel-dot--active {
+        button {
+          background: $red;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 570px) {
+  .reviews {
+    padding: 4rem 2rem;
+  }
+}

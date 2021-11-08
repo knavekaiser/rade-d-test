@@ -1,0 +1,47 @@
+@import "variables";
+
+footer {
+  padding: 6rem 3rem;
+  display: grid;
+  align-items: center;
+  text-align: center;
+  grid-gap: 2.5rem;
+  img {
+    margin: auto;
+  }
+  .socials {
+    display: grid;
+    grid-gap: 1.5rem;
+    justify-content: center;
+    h5 {
+      color: #777;
+      font-size: 1.25rem;
+    }
+    .links {
+      font-size: 2rem;
+      display: flex;
+      grid-gap: 2.25rem;
+      align-items: center;
+      color: rgba(0, 0, 0, 0.3);
+      a {
+        transition: color 0.3s ease-in-out;
+        &:hover {
+          color: $red;
+        }
+      }
+    }
+  }
+  .copy {
+    font-size: 0.9rem;
+    color: #777;
+    a {
+      color: $red;
+    }
+  }
+}
+
+@media (max-width: 570px) {
+  footer {
+    padding: 4rem 2rem;
+  }
+}

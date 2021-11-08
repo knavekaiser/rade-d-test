@@ -1,0 +1,80 @@
+@import "variables";
+
+.latestWorks {
+  position: relative;
+  padding: 4rem 1rem;
+  &::before {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    display: block;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #f9f9ff;
+    height: 100%;
+    width: 100vw;
+  }
+  .categories {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 2rem;
+    font-size: 0.95rem;
+    color: #777;
+    margin: 3rem 0;
+    li {
+      cursor: pointer;
+      &.active {
+        color: $red;
+      }
+      &:hover {
+        color: $red;
+      }
+    }
+  }
+  .content {
+    .work {
+      position: relative;
+      cursor: pointer;
+      .thumb {
+        img {
+          width: 100%;
+          border-radius: 0.5rem;
+        }
+      }
+      .overlay {
+        border-radius: 0.5rem;
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        display: grid;
+        place-items: center;
+        color: white;
+        text-align: center;
+        transition: background 0.3s ease-in-out;
+        h4 {
+          opacity: 0;
+          transition: color 0.5s ease-in-out;
+          letter-spacing: 0.05em;
+          font-size: 1.3rem;
+          span {
+            margin-top: 0.5rem;
+            font-size: 1rem;
+            font-weight: 400;
+            display: block;
+          }
+        }
+      }
+      &:hover {
+        .overlay {
+          background: rgba($red, 0.75);
+          h4 {
+            opacity: 01;
+          }
+        }
+      }
+    }
+  }
+}
