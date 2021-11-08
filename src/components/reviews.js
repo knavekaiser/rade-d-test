@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import Carousel from "react-multi-carousel";
 import { FaStar } from "react-icons/fa";
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";

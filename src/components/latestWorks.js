@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
-import Carousel from "react-multi-carousel";
 import { Modal } from "./lib";
 import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
 require("./style/latestWork.scss");
@@ -55,12 +54,6 @@ const works = [
 function LatestWorks() {
   const [category, setCategory] = useState("all");
   const [showImg, setShowImg] = useState(false);
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 0 },
-      items: 1,
-    },
-  };
   return (
     <div className="latestWorks">
       <div className="sectionHead">

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, forwardRef } from "react";
+import React, { useState, forwardRef } from "react";
 import { createPortal } from "react-dom";
 require("./style/lib.scss");
 
